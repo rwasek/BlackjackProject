@@ -32,5 +32,12 @@ public class Deck {
   public Card dealCard() {
     return cards.remove(0);
   }
+
+@Override
+public String toString() {
+	return "Deck of Cards: [ " + cards + "]";
+}
+  
+  
   
 }
