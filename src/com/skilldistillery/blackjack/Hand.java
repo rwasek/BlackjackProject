@@ -8,7 +8,7 @@ public abstract class Hand {
 // need to be able to add cards
 // need to calculate their current value
 // display themselves
-	protected List<Card> hand;
+	protected List<Card> hand = new ArrayList<>();
 	
 	public Hand() {
 		
@@ -28,6 +28,16 @@ public abstract class Hand {
 	public String toString() {
 		return "Hand:" + hand + "]";
 	}
+
+	public List<Card> getHand() {
+		return hand;
+	}
+
+	public void setHand(List<Card> hand) {
+		this.hand = hand;
+	}
+
+
 	
 	
 	

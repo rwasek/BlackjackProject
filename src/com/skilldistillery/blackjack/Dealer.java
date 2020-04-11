@@ -1,6 +1,5 @@
 package com.skilldistillery.blackjack;
 
-import java.util.Arrays;
 
 public class Dealer {
 // has a private deck
@@ -17,26 +16,48 @@ public class Dealer {
 	}
 	
 	public void shuffleCards() {
-		cardDeck.shuffle();
+		this.cardDeck.shuffle();
 	}
 	
 	public void printDeck() {
 		System.out.println(cardDeck.toString());
 	}
 	
-	public void dealTwoCardsAtStart() {
-		shuffleCards();
-		Card card1 = cardDeck.dealCard();
-		Card card2 = cardDeck.dealCard();
-		dealersHand.addCard(card1);
-		dealersHand.addCard(card2);
+	public void addCardsToDealerHand() {
+		int count = 0;
+		while (count != 2) {
+		Card dealercard = dealCardToDealer();
+		dealersHand.addCard(dealercard);
+		count++;
+		}
+		
+	}
+	
+	public Card dealCardToDealer() {
+		Card dealercard = cardDeck.dealCard();
+		return dealercard;
 	}
 	
 	public Card dealCardToPlayer() {
 		Card playercard = cardDeck.dealCard();
-		
 		return playercard;
 		
+	}
+
+	public Deck getCardDeck() {
+		return cardDeck;
+	}
+
+	public void setCardDeck(Deck cardDeck) {
+		this.cardDeck = cardDeck;
+	}
+
+	public BlackjackHand getDealersHand() {
+		return dealersHand;
+	}
+
+	public void setDealersHand(BlackjackHand dealersHand) {
+		this.dealersHand = dealersHand;
 	}
 	
 	

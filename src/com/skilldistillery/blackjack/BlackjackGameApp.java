@@ -1,6 +1,5 @@
 package com.skilldistillery.blackjack;
 
-import java.util.Arrays;
 
 public class BlackjackGameApp {
 	// has a dealer
@@ -17,7 +16,25 @@ public class BlackjackGameApp {
 	
 	public void launchGame() {
 		dealer.shuffleCards();
-		dealer.printDeck();
+		firstDeal();
+//		dealer.printDeck();
+		
 	}
+	
+	public void firstDeal() {
+		dealer.addCardsToDealerHand();
+		int count = 0;
+		while (count != 2) {
+		Card playercard = dealer.dealCardToPlayer();
+		player.getDealt(playercard);
+		count++;
+		}
+		System.out.println(dealer.getDealersHand());
+		player.displayHand();
+		int value = player.playersHand.getHandValue();
+		System.out.println(value);
+	}
+	
+	
 
 }
