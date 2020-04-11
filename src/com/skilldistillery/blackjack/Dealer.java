@@ -1,5 +1,7 @@
 package com.skilldistillery.blackjack;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class Dealer {
 // has a private deck
@@ -21,6 +23,7 @@ public class Dealer {
 	
 	public void printDeck() {
 		System.out.println(cardDeck.toString());
+		// just a test method to make sure the deck was working correctly.
 	}
 	
 	public void addCardsToDealerHand() {
@@ -29,8 +32,12 @@ public class Dealer {
 		Card dealercard = dealCardToDealer();
 		dealersHand.addCard(dealercard);
 		count++;
-		}
-		
+		}	
+	}
+	
+	public void addOneCardToDealerHand() {
+		Card dealercard = dealCardToDealer();
+		dealersHand.addCard(dealercard);
 	}
 	
 	public Card dealCardToDealer() {
@@ -58,6 +65,33 @@ public class Dealer {
 
 	public void setDealersHand(BlackjackHand dealersHand) {
 		this.dealersHand = dealersHand;
+	}
+
+	public void displayHand() {
+		System.out.println(toString());
+	}
+	
+	public void displayPartialHand() {
+		
+		List<Card> defensiveList = new ArrayList<>();
+		defensiveList.addAll(dealersHand.getHand());
+		for (int i = 1; i < defensiveList.size(); i++) {
+			if (i == 1) {
+			System.out.print("The second card of the dealers hand is: ");
+			System.out.println(defensiveList.get(i).toString());
+			}
+			else {
+				System.out.print("The next card of the dealers hand is: ");
+				System.out.println(defensiveList.get(i).toString());
+			}
+		}
+	
+		
+			
+	}
+	@Override
+	public String toString() {
+		return "Dealers " + dealersHand;
 	}
 	
 	

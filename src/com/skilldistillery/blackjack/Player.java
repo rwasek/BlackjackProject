@@ -5,7 +5,7 @@ public class Player {
 // can play the hands
 // hits to get another card
 // can stay/
-	public BlackjackHand playersHand = new BlackjackHand();
+	private BlackjackHand playersHand = new BlackjackHand();
 	
 	public Player() {
 		
@@ -16,11 +16,12 @@ public class Player {
 	}
 	
 	public void hit() {
-		
+		System.out.println("You tell the dealer: \"Hit me!\"");
+	
 	}
 	
 	public void stay() {
-		
+		System.out.println("You tell the dealer: \"I'll stay!\"");
 	}
 	
 	public void getDealt(Card card) {
@@ -28,12 +29,20 @@ public class Player {
 	}
 	
 	public void displayHand() {
-		System.out.println(playersHand.toString());
+		System.out.println(toString());
 	}
 
 	@Override
 	public String toString() {
-		return "Player [playersHand=" + playersHand + "]";
+		return "Your " + playersHand + "";
+	}
+
+	public BlackjackHand getPlayersHand() {
+		return playersHand;
+	}
+
+	public void setPlayersHand(BlackjackHand playersHand) {
+		this.playersHand = playersHand;
 	}
 	
 	
