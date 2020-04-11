@@ -24,6 +24,8 @@ public class BlackjackGameApp {
 	}
 
 	public void firstDeal() {
+		System.out.println("Let's play BlackJack!");
+		System.out.println("The dealer deals out 2 cards to the player and themselves!\n");
 		dealer.addCardsToDealerHand();
 		int count = 0;
 		while (count != 2) {
@@ -32,7 +34,7 @@ public class BlackjackGameApp {
 			count++;
 		}
 		dealer.displayPartialHand();
-		dealer.displayHand();
+//		dealer.displayHand(); just for testing purposes initially.
 		player.displayHand();
 		System.out.println("Your hand currently has a value of: " + calculatePlayerHandValue());
 		calculateDealersHandValue();
@@ -74,9 +76,9 @@ public class BlackjackGameApp {
 	public void dealerLogic() {
 		if (calculateDealersHandValue() >= 17) {
 			System.out.println("Dealer stays");
-			System.out.println("Dealer had ");
-			System.out.println(calculateDealersHandValue());
-			dealer.displayHand();
+//			System.out.println("Dealer had ");
+//			System.out.println(calculateDealersHandValue());
+//			dealer.displayHand();
 			if (calculateDealersHandValue() > calculatePlayerHandValue()) {
 				System.out.println("Dealer wins!");
 				System.out.print("Dealer had ");
@@ -94,7 +96,7 @@ public class BlackjackGameApp {
 			dealer.addOneCardToDealerHand();
 			
 			dealer.displayHand();
-			System.out.println(calculateDealersHandValue());
+//			System.out.println(calculateDealersHandValue());
 			checkForBlackJackOrBust();
 			
 		}
