@@ -1,10 +1,6 @@
 package com.skilldistillery.blackjack;
 
 public class Player {
-// has a public blackjackhand of cards
-// can play the hands
-// hits to get another card
-// can stay/
 	private BlackjackHand playersHand = new BlackjackHand();
 	
 	public Player() {

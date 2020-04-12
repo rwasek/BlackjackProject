@@ -4,10 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Hand {
-// just the cards that have been dealt to an individual and removed from the deck
-// need to be able to add cards
-// need to calculate their current value
-// display themselves
 	protected List<Card> hand = new ArrayList<>();
 	
 	public Hand() {

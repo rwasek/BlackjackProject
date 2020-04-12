@@ -4,12 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Dealer {
-// has a private deck
-// private hand of cards
-// - shuffles the deck
-// - moves cards to their hand and the players hand
-// - dealer must hit if its under 17 pts.
-// - dealer must stay if its over 17 pts.
 	private Deck cardDeck = new Deck();
 	private BlackjackHand dealersHand = new BlackjackHand();
 	
